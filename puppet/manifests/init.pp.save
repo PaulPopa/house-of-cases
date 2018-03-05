@@ -1,0 +1,30 @@
+include '::phpfpm'
+
+package { 'libapache2-mod-php7.0':
+  ensure => 'installed',
+}
+
+package { 'libapache2-mod-php':
+  ensure => 'installed',
+}
+
+
+class apache::default_mods (
+  $all            = false,
+) {
+apache::mod { 'mpm_prefork':
+  package_ensure => 'present',
+}
+
+apache::mod { 'mpm':
+  package_ensure => 'absent',
+}
+
+apache::mod { 'php7.0':
+  package_ensure => 'present',
+}
+}
+
+
+include '::mysql::server'
+
