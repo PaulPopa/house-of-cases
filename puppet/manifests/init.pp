@@ -8,11 +8,15 @@ class { '::apache':
 }
 
 apache::vhost { 'dev-houseofcases.co.uk':
-  port    => '80',
-  docroot => '/var/www/magento',
+  port          => '80',
+  docroot       => '/var/www/magento',
+  docroot_owner => 'www-data',
+  docroot_group => 'www-data',
+  override      => ['All'],
 }
 
 include '::apache::mod::prefork'
+include '::apache::mod::rewrite'
 include '::apache::mod::php'
 
 class { '::php':
