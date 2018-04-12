@@ -1,35 +1,3 @@
-/**
-
-.header.content {
-  top: -70px;
-}
-
-@media only screen and (min-width: 768px) {
-  .logo img {
-    margin-left: 549px;
-  }
-}
-
-.block-search input {
-  display: none;
-}
-
-.block-search .nested {
-  display: none !important;
-}
-.page-header .header-content {
-    top: -70px;
-}
-
-.page-header .header-content .logo {
-    margin-left: 500px;
-}
-
-.page-header .header-content .logo .img {
-    height: 100px;
-    width: 100px;
-}
-*/
 /** Desktop & Tablet Social Links **/
 @media (min-width: 426px) {
   .social-links {
@@ -383,5 +351,3 @@ select:not([disabled]):focus {
 
 html {
   font-size: 62.5%; }
-
-/*# sourceMappingURL=custom.css.map */
