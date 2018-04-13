@@ -5,7 +5,7 @@ class arp::apache {
 
   apache::vhost { 'dev-houseofcases.co.uk':
     port          => '80',
-    docroot       => '/var/www/magento',
+    docroot       => '/var/www/house-of-cases/magento',
     docroot_owner => 'www-data',
     docroot_group => 'www-data',
     override      => ['All'],
