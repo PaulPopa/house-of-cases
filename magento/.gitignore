@@ -43,6 +43,8 @@ atlassian*
 /dev/tests/functional/testsuites/Magento
 /dev/tests/functional/utils
 
+/tools
+
 /dev/tools/Magento
 /dev/tools/grunt
 /dev/tools/*.*

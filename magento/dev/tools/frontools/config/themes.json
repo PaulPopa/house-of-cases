@@ -1,0 +1,21 @@
+{
+  "magento-blank": {
+    "src": "vendor/magento/theme-frontend-blank",
+    "dest": "pub/static/frontend/Magento/blank",
+    "locale": ["en_GB"],
+    "stylesDir": "scss"
+  },
+  "magento-backend": {
+    "src": "vendor/magento/theme-adminhtml-backend",
+    "dest": "pub/static/adminhtml/Magento/backend",
+    "locale": ["en_GB"],
+    "stylesDir": "scss"
+  },
+  "magic42-alchemy": {
+    "src": "app/design/frontend/HouseOfCases/default",
+    "dest": "pub/static/frontend/HouseOfCases/default",
+    "locale": ["en_GB","en_US"],
+    "stylesDir": "scss",
+    "parent": "magento-blank"
+  }
+}
