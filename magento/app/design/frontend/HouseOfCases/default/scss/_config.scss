@@ -1,0 +1,16 @@
+// This file will include all the variables such as site colours, breakpoints etc.
+$breakpoints: (
+        'xs': 480px,
+        's': 768px,
+        'm': 990px,
+        'l': 1024px,
+        'xl': 1200px,
+        'xxl': 1440px
+);
+
+$colors: (
+        'black': #000,
+        'white': #fff,
+        'dimgrey': #2f4f4f,
+        'riverbed': #424c59
+);

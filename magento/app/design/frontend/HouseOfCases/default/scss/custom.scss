@@ -1,0 +1,13 @@
+// Globally available variables
+@import 'config';
+
+// The core contains everything except variables used
+// throughout the theme. See the core partials table of contents for
+// more information.
+// ------------------------------------------------
+@import 'core';
+@import 'shame';
+
+html {
+  @include rem-baseline;
+}
