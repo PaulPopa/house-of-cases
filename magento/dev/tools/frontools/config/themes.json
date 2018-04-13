@@ -11,7 +11,7 @@
     "locale": ["en_GB"],
     "stylesDir": "scss"
   },
-  "magic42-alchemy": {
+  "HouseOfCases-default": {
     "src": "app/design/frontend/HouseOfCases/default",
     "dest": "pub/static/frontend/HouseOfCases/default",
     "locale": ["en_GB","en_US"],
