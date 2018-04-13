@@ -30,4 +30,12 @@ Vagrant.configure("2") do |config|
     php bin/magento setup:upgrade
     php bin/magento deploy:mode:set developer
   "
+
+  config.vm.provision "shell", name: "Magerun Install", keep_color: true, inline: "
+    cd /var/www/magento
+    wget https://files.magerun.net/n98-magerun2.phar
+    chmod +x ./n98-magerun2.phar
+    cp ./n98-magerun2.phar /usr/local/bin/
+    alias magerun="./n98-magerun2.phar"
+  "
 end
