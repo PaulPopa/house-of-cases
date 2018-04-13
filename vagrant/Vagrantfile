@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
     vb.name = "dev-houseofcases.co.uk"
   end
 
-  config.vm.synced_folder('.', '/vagrant', disabled: true)
-  config.vm.synced_folder("magento/", "/var/www/magento", owner: "www-data", group: "www-data")
+  config.vm.synced_folder(".", "/vagrant", disabled: true)
+  config.vm.synced_folder("../magento/", "/var/www/magento", owner: "www-data", group: "www-data")
 
   config.puppet_install.puppet_version = :latest
   config.vm.provision :puppet do |puppet|
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
     cd /var/www/magento
     wget https://files.magerun.net/n98-magerun2.phar
     chmod +x ./n98-magerun2.phar
-    cp ./n98-magerun2.phar /usr/local/bin/
-    alias magerun="./n98-magerun2.phar"
+    mv ./n98-magerun2.phar /usr/local/bin/
+    alias magerun='./n98-magerun2.phar'
   "
 end
