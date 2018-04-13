@@ -1,45 +1,13 @@
-.page-header .panel.wrapper {
-  border-bottom: 1px solid #e8e8e8;
-  background-color: #f8f8f8;
-  height: 80px;
-}
+// Globally available variables
+@import 'config';
 
-.header.content {
-  top: -70px;
-}
+// The core contains everything except variables used
+// throughout the theme. See the core partials table of contents for
+// more information.
+// ------------------------------------------------
+@import 'core';
+@import 'shame';
 
-.logo img {
-  margin-left: 315px;
-  height: 22px;
-  width: 125px;
-  position: relative;
-  top: -15px;
+html {
+  @include rem-baseline;
 }
-
-@media only screen and (min-width: 768px) {
-  .logo img {
-    margin-left: 549px;
-  }
-}
-
-.block-search input {
-  display: none;
-}
-
-.block-search .nested {
-  display: none !important;
-}
-/**
-.page-header .header-content {
-    top: -70px;
-}
-
-.page-header .header-content .logo {
-    margin-left: 500px;
-}
-
-.page-header .header-content .logo .img {
-    height: 100px;
-    width: 100px;
-}
-*/
