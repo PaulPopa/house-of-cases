@@ -128,6 +128,5 @@
             <block class="Magento\Framework\View\Element\Template" name="product-description" before="-"
                    template="Magento_Theme::html/product-description.phtml"/>
         </referenceContainer>
-
     </body>
 </page>
