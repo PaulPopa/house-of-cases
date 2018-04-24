@@ -1,15 +1,21 @@
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-    <referenceBlock name="top.links" >
-        <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
-        <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
-        <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
-        <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
-    </referenceBlock>
-
-        <referenceBlock name="store.settings" >
-            <referenceBlock name="store.settings.currency" remove="true"/>
+        <referenceBlock name="top.links" >
+            <referenceBlock name="advanced-search-link" remove="true"/>     <!--for Advanced Search Link-->
+            <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link-->
+            <referenceBlock name="currency" remove="true"/>                 <!--for Currency-->
+            <referenceBlock name="header" remove="true"/>                   <!--for Default message-->
+            <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
+            <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+            <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
         </referenceBlock>
 
+        <move element="top.search" destination="top.links" before="-"/>
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="social-links" before="store_language"
+                   template="Magento_Theme::html/social-links.phtml"/>
+        </referenceContainer>
     </body>
 </page>
