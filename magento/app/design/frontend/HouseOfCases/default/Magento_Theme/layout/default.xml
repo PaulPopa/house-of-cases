@@ -17,5 +17,12 @@
             <block class="Magento\Framework\View\Element\Template" name="social-links" before="store_language"
                    template="Magento_Theme::html/social-links.phtml"/>
         </referenceContainer>
+
+        <referenceBlock name="navigation.sections" remove="true"/>         <!--for Navigation Bar-->
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="navigation-bar" before="mini-cart"
+                   template="Magento_Theme::html/navigation-bar.phtml" />
+        </referenceContainer>
     </body>
 </page>

@@ -1,19 +1,7 @@
-.page-header .panel.wrapper {
-  border-bottom: 1px solid #e8e8e8;
-  background-color: #f8f8f8;
-  height: 80px;
-}
+/**
 
 .header.content {
   top: -70px;
-}
-
-.logo img {
-  margin-left: 315px;
-  height: 22px;
-  width: 125px;
-  position: relative;
-  top: -15px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -29,7 +17,6 @@
 .block-search .nested {
   display: none !important;
 }
-/**
 .page-header .header-content {
     top: -70px;
 }
@@ -46,6 +33,10 @@
 
 /** Social Links **/
 .social-links {
+  @include rem(height, 32px);
+  @include rem(line-height, 29px);
+  @include rem(vertical-align, middle);
+
   a {
     @include rem(margin-right, 25px);
     @include rem(max-width, 10px);
@@ -70,7 +61,78 @@
 
     &:hover {
       background-color: map-get($colors, 'black');
-      color: map-get($colors, 'white');
+      color: map-get($colors, 'grey');
+    }
+  }
+}
+
+/** Page Header **/
+.page-wrapper {
+  .page-header {
+    @include rem(height, 104px);
+    background-color: map-get($colors, 'grey');
+
+    .panel {
+      &.wrapper {
+        @include rem(border-bottom, 1.75px solid map-get($colors, 'black'));
+        @include rem(height, 52px);
+      }
+    }
+
+    .header {
+      &.content {
+        padding: 0;
+      }
+    }
+  }
+}
+
+/** Cart **/
+.minicart-wrapper {
+  position: absolute;
+  right: 0;
+
+  .action {
+    &.showcart {
+      @include rem(margin-right, 23px);
+      @include rem(margin-top, 10px);
+    }
+  }
+}
+
+
+.logo {
+  @include rem(top, -35px);
+  left: calc(50% - 90px);
+
+  img {
+    @include rem(width, 180px)
+  }
+}
+
+/** Navigation Bar **/
+.navigation-bar {
+  @include rem(line-height, 52px);
+  height: 100%;
+  left: 50%;
+  padding: 0;
+  position: absolute;
+  transform: translate(-50%, 0);
+
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+
+    a {
+      @include rem(padding, 8px);
+      color: map-get($colors, 'black');
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: map-get($colors, 'dimgrey');
+        cursor: pointer;
+      }
     }
   }
 }

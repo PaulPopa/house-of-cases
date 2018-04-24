@@ -50,3 +50,14 @@ $helper = $this->helper(\Magento\Search\Helper\Data::class);
         </form>
     </div>
 </div>
+
+<script>
+    jQuery('#search').hide();
+    jQuery('.control').hover(
+        function() {
+            jQuery('#search').show();
+        }, function() {
+            jQuery('#search').hide();
+        }
+    );
+</script>
