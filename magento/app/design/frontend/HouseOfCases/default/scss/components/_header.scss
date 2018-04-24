@@ -43,3 +43,34 @@
     width: 100px;
 }
 */
+
+/** Social Links **/
+.social-links {
+  a {
+    @include rem(margin-right, 25px);
+    @include rem(max-width, 10px);
+    display: inline-block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .fa {
+    @include rem(border-width, 1.2px);
+    @include rem(height, 25px);
+    @include rem(line-height, 25px);
+    @include rem(width, 25px);
+    border-color: map-get($colors, 'black');
+    border-radius: 50%;
+    border-style: solid;
+    color: map-get($colors, 'black');
+    text-align: center;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: map-get($colors, 'black');
+      color: map-get($colors, 'white');
+    }
+  }
+}
