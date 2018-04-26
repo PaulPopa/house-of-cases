@@ -88,10 +88,13 @@
     margin-top: 10px;
     margin-top: 1rem; }
 
+/** Logo **/
 .logo {
   top: -35px;
   top: -3.5rem;
-  left: calc(50% - 90px); }
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0); }
   .logo img {
     width: 180px;
     width: 18rem; }
@@ -118,6 +121,15 @@
       .navigation-bar li a:hover {
         color: #2f4f4f;
         cursor: pointer; }
+
+/** Search Bar **/
+.action.search.submit {
+  left: 20px;
+  left: 2rem; }
+
+#search {
+  padding-left: 25px;
+  padding-left: 2.5rem; }
 
 html {
   font-size: 62.5%; }

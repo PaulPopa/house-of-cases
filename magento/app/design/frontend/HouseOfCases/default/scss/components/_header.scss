@@ -101,9 +101,11 @@
 }
 
 
+/** Logo **/
 .logo {
   @include rem(top, -35px);
-  left: calc(50% - 90px);
+  left: 50%;
+  transform: translate(-50%, 0);
 
   img {
     @include rem(width, 180px)
@@ -135,4 +137,17 @@
       }
     }
   }
+}
+
+/** Search Bar **/
+.action {
+  &.search {
+    &.submit {
+      @include rem(left, 20px);
+    }
+  }
+}
+
+#search {
+  @include rem(padding-left, 25px);
 }
