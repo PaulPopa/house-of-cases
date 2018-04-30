@@ -11,7 +11,8 @@
         "magento/product-community-edition": "2.2.3",
         "composer/composer": "@alpha",
         "snowdog/frontools": "^1.5",
-        "swissup/font-awesome": "^1.2"
+        "swissup/font-awesome": "^1.2",
+        "magestore/module-bannerslider": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.2.0",
