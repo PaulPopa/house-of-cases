@@ -24,5 +24,85 @@
             <block class="Magento\Framework\View\Element\Template" name="navigation-bar" before="mini-cart"
                    template="Magento_Theme::html/navigation-bar.phtml" />
         </referenceContainer>
+
+        <referenceBlock name="footer_links">
+            <!-- Replace Privacy Policy Link with Contact link -->
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="privacy-policy-link">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">Contact</argument>
+                    <argument name="path" xsi:type="string">privacy-policy-cookie-restriction-mode</argument>
+                </arguments>
+            </block>
+            <!-- Replace Search terms with Despre noi link -->
+            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="catalog/seo/search_terms" name="search-term-popular-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Despre noi</argument>
+                    <argument name="path" xsi:type="string">search/term/popular</argument>
+                </arguments>
+            </block>
+            <!-- Replace Orders and Returns with Termeni si conditii link -->
+            <block class="Magento\Sales\Block\Guest\Link" name="sales-guest-form-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Termeni si conditii</argument>
+                    <argument name="path" xsi:type="string">sales/guest/form</argument>
+                </arguments>
+            </block>
+            <!-- Replace Advanced Search with Confidentialitate link -->
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="catalog-search-advanced-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Confidentialitate</argument>
+                    <argument name="path" xsi:type="string">catalogsearch/advanced</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="data-action" xsi:type="string">advanced-search</item>
+                    </argument>
+                </arguments>
+            </block>
+            <!-- Replace Contact us with Metode de plata link -->
+            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Metode de plata</argument>
+                    <argument name="path" xsi:type="string">contact</argument>
+                </arguments>
+            </block>
+
+            <referenceBlock name="copyright" remove="true"/>
+            <referenceBlock name="report.bugs" remove="true"/>
+            <referenceBlock name="form.subscribe" remove="true"/>
+            <referenceBlock name="email" remove="true"/>
+
+            <referenceContainer name="footer-container">
+                <container name="footerr" as="footerr" label="Page Footer" htmlTag="div" htmlClass="footer content right">
+                    <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_2">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">footer linkss</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="custom-page">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Politica de Retur</argument>
+                            <argument name="path" xsi:type="string">url-key-of-your-page</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="garantia-produselor">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Garantia Produselor</argument>
+                            <argument name="path" xsi:type="string">contact</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="odr">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Online Dispute Resolution</argument>
+                            <argument name="path" xsi:type="string">contact</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="anpc">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">ANPC</argument>
+                            <argument name="path" xsi:type="string">contact</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </referenceContainer>
+        </referenceBlock>
     </body>
 </page>
