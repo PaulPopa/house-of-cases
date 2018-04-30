@@ -52,21 +52,3 @@ $helper = $this->helper(\Magento\Search\Helper\Data::class);
         </form>
     </div>
 </div>
-
-<script>
-    var $box = jQuery('#search, #search-submit');
-    var $search = jQuery('#identifying-glass');
-
-    $box.hide();
-    $search.click(function() {
-        $box.show();
-        $search.hide();
-    });
-
-    jQuery(document).mouseup(function(e) {
-        if (!$box.is(e.target) && $box.has(e.target).length === 0) {
-            $box.hide();
-            $search.show();
-        }
-    });
-</script>
