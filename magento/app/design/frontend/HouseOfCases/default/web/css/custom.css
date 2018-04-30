@@ -200,6 +200,130 @@ a {
         padding-bottom: 10px;
         padding-bottom: 1rem; } }
 
+/** REVIEW STARS BLACK **/
+.rating-summary .rating-result > span:before {
+  color: #000; }
+
+.product-info-main .page-title-wrapper .page-title {
+  margin-top: 10px !important;
+  margin-top: 1rem !important; }
+
+/** REMOVE ADD-TO-LINKS FROM PRODUCTS WIDGET HOME PAGE **/
+.product-item-actions .actions-primary {
+  display: block; }
+  .product-item-actions .actions-primary + .actions-secondary {
+    display: none; }
+
+/** DISPLAY QTY AND BOX FOR QUANTITY IN THE SAME LINE **/
+.product-add-form .fieldset > .field:not(.choice) > .control {
+  display: inline-block; }
+
+/** MOVE ADD TO CART BELOW QTY **/
+@media (min-width: 768px) {
+  .product-info-main .box-tocart .field.qty {
+    display: block !important; }
+  .product-options-bottom .box-tocart .field.qty {
+    display: block !important; } }
+
+.print .product-info-main .box-tocart .field.qty {
+  display: block !important; }
+
+.print .product-options-bottom .box-tocart .field.qty {
+  display: block !important; }
+
+/** ADD TO CART AND REMOVE BLUE BORDER FROM THE BUTTON **/
+.product-info-main .box-tocart .action.tocart {
+  border: 1px solid !important;
+  border: 0.1rem solid !important;
+  background-color: #1bc389; }
+
+.product-info-main .box-tocart .input-text.qty {
+  height: 35px;
+  height: 3.5rem;
+  margin-left: 20px;
+  margin-left: 2rem; }
+
+.product-info-main .price-box {
+  /* @include rem(padding-bottom, 20px); */ }
+
+.product-info-main .product-info-stock-sku {
+  /* @include rem(padding-bottom, 20px); */ }
+
+.product-options-bottom .box-tocart .action.tocart {
+  border: 1px solid !important;
+  border: 0.1rem solid !important;
+  background-color: #1bc389; }
+
+.product-options-bottom .box-tocart .input-text.qty {
+  height: 35px;
+  height: 3.5rem;
+  margin-left: 20px;
+  margin-left: 2rem; }
+
+/** ADD TO CART ON HOVER **/
+.action.primary {
+  background-color: #1bc389; }
+
+/** SIZE DROPDOWN MENU */
+select {
+  border: 1px solid #f8f8f8;
+  border: 0.1rem solid #f8f8f8;
+  background: #f8f8f8 !important;
+  font-weight: 600;
+  width: 60%; }
+
+._keyfocus *:focus {
+  box-shadow: 0 0 3px 1px #f8f8f8 !important;
+  box-shadow: 0 0 0.3rem 0.1rem #f8f8f8 !important; }
+
+input:not([disabled]):focus {
+  box-shadow: 0 0 3px 1px #f8f8f8 !important;
+  box-shadow: 0 0 0.3rem 0.1rem #f8f8f8 !important; }
+
+textarea:not([disabled]):focus {
+  box-shadow: 0 0 3px 1px #f8f8f8 !important;
+  box-shadow: 0 0 0.3rem 0.1rem #f8f8f8 !important; }
+
+select:not([disabled]):focus {
+  box-shadow: 0 0 3px 1px #f8f8f8 !important;
+  box-shadow: 0 0 0.3rem 0.1rem #f8f8f8 !important; }
+
+.links .block-static-block.widget {
+  margin-top: -20px;
+  margin-top: -2rem;
+  right: 10px;
+  right: 1rem;
+  position: absolute; }
+
+.swatch-attribute-options .swatch-option {
+  height: 29px;
+  height: 2.9rem;
+  width: 23px;
+  width: 2.3rem;
+  border-radius: 50%;
+  /** MAKE COLOR SWATCHER BIGGER ON HOVER
+    &:hover {
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.3);
+    } **/ }
+  .swatch-attribute-options .swatch-option:hover {
+    outline: 2px solid transparent !important;
+    outline: 0.2rem solid transparent !important; }
+  .swatch-attribute-options .swatch-option.selected {
+    outline: 2px solid transparent !important;
+    outline: 0.2rem solid transparent !important; }
+  .swatch-attribute-options .swatch-option.image:not(.disabled):hover {
+    outline: 2px solid transparent !important;
+    outline: 0.2rem solid transparent !important; }
+
+.clearfix:after {
+  display: none; }
+
+.swatch-option-tooltip {
+  display: none !important;
+  visibility: hidden !important; }
+
 html {
   font-size: 62.5%; }
 
