@@ -104,5 +104,8 @@
                 </container>
             </referenceContainer>
         </referenceBlock>
+
+        <!-- Remove product tabs: Details and more information -->
+        <referenceBlock name="product.attributes" remove="true" />
     </body>
 </page>
