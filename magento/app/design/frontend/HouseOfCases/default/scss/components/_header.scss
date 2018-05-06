@@ -226,7 +226,7 @@
 
 .page-wrapper {
   .shipping-header {
-    background: map_get($colors, 'hoc');
+    background: map-get($colors, 'hoc');
   }
 
   .shipping-text {
@@ -245,6 +245,19 @@
     .shipping-header {
       .shipping-text {
         font-size: 14pt;
+      }
+    }
+  }
+}
+
+/** Mini-cart design */
+.minicart-wrapper {
+  .action {
+    &.showcart {
+      .counter {
+        &.qty {
+          background:  map-get($colors, 'teal'); ;
+        }
       }
     }
   }

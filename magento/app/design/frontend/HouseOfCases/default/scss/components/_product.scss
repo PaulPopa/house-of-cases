@@ -142,100 +142,115 @@
 /** ADD TO CART ON HOVER **/
 .action {
   &.primary {
-    background-color: map-get($colors, 'teal');
+    background-color: map-get($colors, 'teal') !important;
+    @include rem(border, 1px solid map-get($colors, 'teal'));
+  }
+
+  &:hover {
+    @include rem(border, 1px solid transparent !important);
   }
 }
 
-
-/** SIZE DROPDOWN MENU */
-select {
-  @include rem(border, 1px solid map-get($colors, 'grey'));
-  background: map-get($colors, 'grey') !important;
-  font-weight: 600;
-  width: 60%;
-}
-
-._keyfocus {
-  * {
-    &:focus {
-      @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
-    }
-  }
-}
-
-input {
-  &:not([disabled]) {
-    &:focus {
-      @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
-    }
-  }
-}
-
-textarea {
-  &:not([disabled]) {
-    &:focus {
-      @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
-    }
-  }
-}
-
-select {
-  &:not([disabled]) {
-    &:focus {
-      @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
-    }
-  }
-}
-
-.links {
-  .block-static-block {
-    &.widget {
-      @include rem(margin-top, -20px);
-      @include rem(right, 10px);
-      position: absolute;
+/** Change color for product name in mini-cart */
+.minicart-items {
+  .product-item-name {
+    a {
+      color: map-get($colors, 'black');
     }
   }
 }
 
 
-.swatch-attribute-options {
-  .swatch-option {
-    @include rem(height, 29px);
-    @include rem(width, 23px);
-    border-radius: 50%;
+    /** SIZE DROPDOWN MENU */
+  select {
+    @include rem(border, 1px solid map-get($colors, 'grey'));
+    background: map-get($colors, 'grey') !important;
+    font-weight: 600;
+    width: 60%;
+  }
 
-    &:hover {
-      @include rem(outline, 2px solid transparent !important);
-    }
-
-    &.selected {
-      @include rem(outline, 2px solid transparent !important);
-    }
-
-    &.image {
-      &:not(.disabled) {
-        &:hover {
-          @include rem(outline, 2px solid transparent !important);
-        }
+  ._keyfocus {
+    * {
+      &:focus {
+        @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
       }
     }
-
-    /** MAKE COLOR SWATCHER BIGGER ON HOVER
-    &:hover {
-      -webkit-transform: scale(1.3);
-      -ms-transform: scale(1.3);
-      transform: scale(1.3);
-    } **/
   }
-}
 
-.clearfix {
-  &:after {
-    display: none;
+  input {
+    &:not([disabled]) {
+      &:focus {
+        @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
+      }
+    }
   }
-}
 
-.swatch-option-tooltip {
-  display: none !important;
-  visibility: hidden !important;
-}
+  textarea {
+    &:not([disabled]) {
+      &:focus {
+        @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
+      }
+    }
+  }
+
+  select {
+    &:not([disabled]) {
+      &:focus {
+        @include rem(box-shadow, 0 0 3px 1px map-get($colors ,'grey') !important);
+      }
+    }
+  }
+
+  .links {
+    .block-static-block {
+      &.widget {
+        @include rem(margin-top, -20px);
+        @include rem(right, 10px);
+        position: absolute;
+      }
+    }
+  }
+
+
+  .swatch-attribute-options {
+    .swatch-option {
+      @include rem(height, 29px);
+      @include rem(width, 23px);
+      border-radius: 50%;
+
+      &:hover {
+        @include rem(outline, 2px solid transparent !important);
+      }
+
+      &.selected {
+        @include rem(outline, 2px solid transparent !important);
+      }
+
+      &.image {
+        &:not(.disabled) {
+          &:hover {
+            @include rem(outline, 2px solid transparent !important);
+          }
+        }
+      }
+
+      /** MAKE COLOR SWATCHER BIGGER ON HOVER
+      &:hover {
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+      } **/
+    }
+  }
+
+  .clearfix {
+    &:after {
+      display: none;
+    }
+  }
+
+  .swatch-option-tooltip {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
