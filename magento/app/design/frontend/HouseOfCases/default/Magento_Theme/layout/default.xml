@@ -1,14 +1,14 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="top.links" >
+        <referenceBlock name="top.links">
             <referenceBlock name="advanced-search-link" remove="true"/>     <!--for Advanced Search Link-->
-            <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link-->
+            <referenceBlock name="authorization-link" remove="true"/>      <!--for Sign In Link-->
             <referenceBlock name="currency" remove="true"/>                 <!--for Currency-->
             <referenceBlock name="header" remove="true"/>                   <!--for Default message-->
-            <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
-            <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
-            <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+            <referenceBlock name="my-account-link" remove="true"/>         <!--for My Account Link-->
+            <referenceBlock name="register-link" remove="true"/>           <!--for Create Account Link-->
+            <referenceBlock name="wish-list-link" remove="true"/>          <!--for WishList Link-->
         </referenceBlock>
 
         <referenceContainer name="main">
@@ -27,7 +27,7 @@
 
         <referenceContainer name="header-wrapper">
             <block class="Magento\Framework\View\Element\Template" name="navigation-bar" before="mini-cart"
-                   template="Magento_Theme::html/navigation-bar.phtml" />
+                   template="Magento_Theme::html/navigation-bar.phtml"/>
         </referenceContainer>
 
         <referenceBlock name="footer_links">
@@ -39,7 +39,8 @@
                 </arguments>
             </block>
             <!-- Replace Search terms with Despre noi link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="catalog/seo/search_terms" name="search-term-popular-link">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="catalog/seo/search_terms"
+                   name="search-term-popular-link">
                 <arguments>
                     <argument name="label" xsi:type="string" translate="true">Despre noi</argument>
                     <argument name="path" xsi:type="string">search/term/popular</argument>
@@ -63,7 +64,8 @@
                 </arguments>
             </block>
             <!-- Replace Contact us with Metode de plata link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
+                   name="contact-us-link">
                 <arguments>
                     <argument name="label" xsi:type="string" translate="true">Metode de plata</argument>
                     <argument name="path" xsi:type="string">contact</argument>
@@ -76,7 +78,8 @@
             <referenceBlock name="email" remove="true"/>
 
             <referenceContainer name="footer-container">
-                <container name="footerr" as="footerr" label="Page Footer" htmlTag="div" htmlClass="footer content right">
+                <container name="footerr" as="footerr" label="Page Footer" htmlTag="div"
+                           htmlClass="footer content right">
                     <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_2">
                         <arguments>
                             <argument name="css_class" xsi:type="string">footer linkss</argument>
@@ -88,19 +91,23 @@
                             <argument name="path" xsi:type="string">url-key-of-your-page</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="garantia-produselor">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
+                           name="garantia-produselor">
                         <arguments>
                             <argument name="label" xsi:type="string" translate="true">Garantia Produselor</argument>
                             <argument name="path" xsi:type="string">contact</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="odr">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
+                           name="odr">
                         <arguments>
-                            <argument name="label" xsi:type="string" translate="true">Online Dispute Resolution</argument>
+                            <argument name="label" xsi:type="string" translate="true">Online Dispute Resolution
+                            </argument>
                             <argument name="path" xsi:type="string">contact</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="anpc">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
+                           name="anpc">
                         <arguments>
                             <argument name="label" xsi:type="string" translate="true">ANPC</argument>
                             <argument name="path" xsi:type="string">contact</argument>
@@ -111,7 +118,7 @@
         </referenceBlock>
 
         <!-- Remove product tabs: Details and more information -->
-        <referenceBlock name="product.attributes" remove="true" />
+        <referenceBlock name="product.attributes" remove="true"/>
 
         <!-- Add logo to footer (footer_block block) -->
         <referenceBlock name="footer_links_2">
@@ -121,12 +128,5 @@
                 </arguments>
             </block>
         </referenceBlock>
-
-
-        <!--Add product description to Details Tab-->
-        <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="product-description" before="-"
-                   template="Magento_Theme::html/product-description.phtml"/>
-        </referenceContainer>
     </body>
 </page>
