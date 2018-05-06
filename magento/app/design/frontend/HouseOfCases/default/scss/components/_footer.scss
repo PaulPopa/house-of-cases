@@ -7,14 +7,22 @@ a {
   }
 }
 
-@include breakpoint(770px) {
+@include breakpoint(426px) {
   .footer {
     &.content {
       @include rem(margin-top, -35px);
       border-top: hidden;
 
       .links {
+        @include rem(margin-bottom, -27px !important);
         @include rem(margin-top, 45px);
+        @include rem(margin-left, 35px);
+
+        img {
+          @include rem(height, 40px);
+          @include rem(margin-top, -10px);
+          @include rem(width, 185px);
+        }
 
         > li {
           @include rem(margin-left, -45px);
@@ -36,12 +44,6 @@ a {
         text-align: right;
         width: auto;
 
-        .img {
-          @include rem(height, 40px);
-          @include rem(margin-top, -10px);
-          @include rem(width, 185px);
-        }
-
         > li {
           @include rem(padding-top, 10px);
         }
@@ -50,12 +52,13 @@ a {
   }
 
   .page-footer {
+    @include rem(margin-top, 100%);
     background-color: map-get($colors, 'grey');
   }
 }
 
-/** MOBILE AND TABLET */
-@include breakpoint(0px, 770px) {
+/** MOBILE */
+@include breakpoint(0px, 425px) {
   .footer {
     &.content {
       @include rem(margin-top, -10px);
@@ -87,4 +90,8 @@ a {
       }
     }
   }
+  .page-footer {
+    background-color: map-get($colors, 'grey');
+  }
 }
+

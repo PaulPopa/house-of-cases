@@ -11,6 +11,11 @@
             <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
         </referenceBlock>
 
+        <referenceContainer name="main">
+            <block class="Magento\Framework\View\Element\Template" name="homepage-categories" before="-"
+                   template="Magento_Theme::html/homepage-categories.phtml"/>
+        </referenceContainer>
+
         <move element="top.search" destination="top.links" before="-"/>
 
         <referenceContainer name="header.panel">
@@ -107,5 +112,22 @@
 
         <!-- Remove product tabs: Details and more information -->
         <referenceBlock name="product.attributes" remove="true" />
+
+        <!-- Add logo to footer (footer_block block) -->
+        <referenceBlock name="footer_links_2">
+            <block class="Magento\Cms\Block\Block" name="footer_block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_block</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+
+        <!--Add product description to Details Tab-->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="product-description" before="-"
+                   template="Magento_Theme::html/product-description.phtml"/>
+        </referenceContainer>
+
     </body>
 </page>
