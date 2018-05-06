@@ -186,5 +186,9 @@
         <move element="product.info.stock.sku" destination="product.info.main" after="product.info.price"/>
         <move element="product.price.final" destination="product.info.main" before="product.info.price"/>
         <referenceContainer name="product.info.social" remove="true"/>
+
+        <move element="footer.block" destination="footer.content.right" before="-"/>
+
+
     </body>
 </page>
