@@ -1,4 +1,4 @@
-class arp::apache {
+class arp::apachedev {
   class { '::apache':
     mpm_module => 'prefork',
   }

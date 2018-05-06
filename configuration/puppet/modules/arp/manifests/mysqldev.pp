@@ -1,4 +1,4 @@
-class arp::mysql {
+class arp::mysqldev {
   include '::mysql::server'
 
   ::mysql::db { 'hoc_dev':
