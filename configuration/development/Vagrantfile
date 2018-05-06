@@ -1,21 +1,21 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
   config.vm.hostname = "dev-houseofcases.co.uk"
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.11"
 
   config.vm.provider :virtualbox do |vb|
     vb.name = "dev-houseofcases.co.uk"
   end
 
-  config.vm.synced_folder(".", "/vagrant", disabled: true)
-  config.vm.synced_folder("../magento/", "/var/www/house-of-cases/magento", owner: "www-data", group: "www-data")
-  config.vm.synced_folder("../scripts/", "/var/www/house-of-cases/scripts", owner: "www-data", group: "www-data")
+  config.vm.synced_folder(".", "/development", disabled: true)
+  config.vm.synced_folder("../../magento/", "/var/www/house-of-cases/magento", owner: "www-data", group: "www-data")
+  config.vm.synced_folder("../../scripts/", "/var/www/house-of-cases/scripts", owner: "www-data", group: "www-data")
 
   config.puppet_install.puppet_version = :latest
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = 'puppet/manifests'
-    puppet.module_path = 'puppet/modules'
-    puppet.manifest_file = 'init.pp'
+    puppet.manifests_path = '../puppet/manifests'
+    puppet.module_path = '../puppet/modules'
+    puppet.manifest_file = 'init-development.pp'
   end
 
   config.vm.provision "shell", name: "Magento Setup", keep_color: true, inline: "
