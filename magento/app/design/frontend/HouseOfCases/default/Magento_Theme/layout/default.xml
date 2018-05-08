@@ -128,5 +128,10 @@
                 </arguments>
             </block>
         </referenceBlock>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="shipping-header" before="-"
+                   template="Magento_Theme::html/shipping-header.phtml"/>
+        </referenceContainer>
     </body>
 </page>

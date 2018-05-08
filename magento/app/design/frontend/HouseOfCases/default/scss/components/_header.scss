@@ -223,3 +223,29 @@
 #search {
   @include rem(padding-left, 25px);
 }
+
+.page-wrapper {
+  .shipping-header {
+    background: map_get($colors, 'hoc');
+  }
+
+  .shipping-text {
+    color: white;
+    font-family: Helvetica;
+    font-size: 15pt;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: underline;
+  }
+}
+
+/** MOBILE */
+@include breakpoint(0px, 425px) {
+  .page-wrapper {
+    .shipping-header {
+      .shipping-text {
+        font-size: 14pt;
+      }
+    }
+  }
+}
