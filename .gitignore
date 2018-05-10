@@ -1,2 +1,4 @@
-vagrant/.vagrant/
+configuration/development/.vagrant/
+configuration/development/*.log
+configuration/production/.vagrant/
 .idea/
