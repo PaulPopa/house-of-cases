@@ -68,6 +68,8 @@ atlassian*
 /pub/media/downloadable/*
 !/pub/media/downloadable/.htaccess
 /pub/media/import/*
+/pub/media/logo/*
+/pub/media/magestore/*
 !/pub/media/import/.htaccess
 /pub/media/theme/*
 /pub/media/theme_customization/*
