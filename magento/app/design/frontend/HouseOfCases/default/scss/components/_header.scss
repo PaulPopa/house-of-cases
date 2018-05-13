@@ -31,62 +31,20 @@
 }
 */
 
-/** Desktop & Tablet Social Links **/
-@include breakpoint(426px) {
-  .social-links {
-    @include rem(height, 32px);
-    @include rem(line-height, 29px);
-    @include rem(vertical-align, middle);
-
-    a {
-      @include rem(margin-right, 25px);
-      @include rem(max-width, 10px);
-      display: inline-block;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    .fa {
-      @include rem(border-width, 1.2px);
-      @include rem(height, 25px);
-      @include rem(line-height, 25px);
-      @include rem(width, 25px);
-      border-color: map-get($colors, 'black');
-      border-radius: 50%;
-      border-style: solid;
-      color: map-get($colors, 'black');
-      text-align: center;
-      vertical-align: middle;
-
-      &:hover {
-        background-color: map-get($colors, 'black');
-        color: map-get($colors, 'grey');
-      }
-    }
-  }
-}
-
-/** MOBILE */
-@include breakpoint(0px, 425px) {
-  .social-links {
-    display: none;
-  }
-}
-
-
 /** Desktop & Tablet Page Header */
 @include breakpoint(426px) {
   .page-wrapper {
     .page-header {
       @include rem(height, 104px);
       background-color: map-get($colors, 'grey');
+      box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.10);
 
       .panel {
         &.wrapper {
-          @include rem(border-bottom, 1.75px solid map-get($colors, 'black'));
+          @include rem(border-bottom, 1px solid rgba(0, 0, 0, 3.0));
           @include rem(height, 52px);
+          @include rem(margin, 0 auto);
+          width: 95%;
         }
       }
 
@@ -96,6 +54,34 @@
         }
       }
     }
+  }
+}
+
+@include breakpoint(1020px, 1300px) {
+  .page-wrapper {
+    .page-header {
+      .panel {
+        &.wrapper {
+          max-width: 95%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(426px, 767px) {
+  .page-wrapper {
+    .page-header {
+      .panel {
+        &.wrapper {
+          width: 94%;
+        }
+      }
+    }
+  }
+
+  .navigation-bar {
+    @include rem(margin-left, 15px);
   }
 }
 
@@ -103,12 +89,13 @@
 @include breakpoint(0px, 425px) {
   .page-wrapper {
     .page-header {
-      @include rem(height, 104px);
+      @include rem(height, 75px);
       background-color: map-get($colors, 'grey');
+      border-bottom: none;
+      box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.10);
 
       .panel {
         &.wrapper {
-          @include rem(border-bottom, 1.75px solid map-get($colors, 'grey'));
           @include rem(height, 52px);
         }
       }
@@ -118,6 +105,35 @@
           padding: 0;
         }
       }
+    }
+  }
+
+  .nav-toggle {
+    top: -35px;
+  }
+
+  .minicart-wrapper {
+    top: -51px;
+  }
+
+  .minicart-wrapper {
+    .action.showcart {
+      @include rem(margin-right, 10px);
+      @include rem(margin-top, 8px);
+      @include rem(right, -10px);
+      display: block;
+      position: absolute;
+    }
+  }
+
+  /** Categories title and description from homepage */
+  .content-heading {
+    .title {
+      font-size: 18px !important;
+    }
+
+    .info {
+      font-size: 12px !important;
     }
   }
 }
@@ -136,16 +152,37 @@
 }
 
 
-/** Desktop & Tablet Logo **/
-@include breakpoint(426px) {
+/** Desktop Logo **/
+@include breakpoint(768px) {
   .logo {
-    @include rem(top, -35px);
-    left: 50%;
-    transform: translate(-50%, 0);
+    @include rem(left, 30px);
+    @include rem(margin-left, 25px);
+    @include rem(top, -32px);
+    float: left;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    width: 100%;
 
     img {
-      @include rem(width, 180px)
+      @include rem(width, 180px);
     }
+  }
+}
+
+/** Tablet Logo && Nav toggle */
+@include breakpoint(426px, 767px) {
+  .logo {
+    @include rem(margin-left, 25px);
+    @include rem(top, -45px);
+    float: left;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
 
@@ -166,11 +203,11 @@
 @include breakpoint(426px) {
   .navigation-bar {
     @include rem(line-height, 52px);
-    height: 100%;
-    left: 50%;
+    @include rem(margin-left, 20px);
+    float: left;
     padding: 0;
     position: absolute;
-    transform: translate(-50%, 0);
+    width: 100%;
 
     li {
       display: inline-block;
@@ -198,16 +235,16 @@
   }
 }
 
-@include breakpoint(426px, 769px) {
+/** MOBILE */
+@include breakpoint(0px, 425px) {
   .navigation-bar {
     display: none;
   }
 }
 
-/** MOBILE */
-@include breakpoint(0px, 425px) {
-  .navigation-bar {
-    display: none;
+.block-search {
+  .action.search {
+    @include rem(right, -14px !important);
   }
 }
 
@@ -224,41 +261,81 @@
   @include rem(padding-left, 25px);
 }
 
-.page-wrapper {
-  .shipping-header {
-    background: map-get($colors, 'hoc');
-  }
-
-  .shipping-text {
-    color: white;
-    font-family: Helvetica;
-    font-size: 15pt;
-    font-weight: 800;
-    text-align: center;
-    text-decoration: underline;
-  }
-}
-
-/** MOBILE */
-@include breakpoint(0px, 425px) {
+@include breakpoint(1024px) {
   .page-wrapper {
     .shipping-header {
       .shipping-text {
-        font-size: 14pt;
+        @include rem(margin-top, -1px !important);
+        font-size: 15pt;
       }
     }
   }
 }
+@include breakpoint(426px) {
+  .page-wrapper {
+    .shipping-header {
+      @include rem(height, 35px);
+      background: map-get($colors, 'hoc');
+    }
 
-/** Mini-cart design */
-.minicart-wrapper {
-  .action {
-    &.showcart {
-      .counter {
-        &.qty {
-          background:  map-get($colors, 'teal'); ;
+    .shipping-text {
+      //@include rem(margin-top, 5px !important);
+      @include rem(padding-top, 5px);
+      color: white;
+      font-family: "Halvetica Neue";
+      font-size: 13pt;
+      font-weight: 800;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+  /** MOBILE */
+  @include breakpoint(0px, 425px) {
+    .page-wrapper {
+      .shipping-header {
+        @include rem(height, 35px);
+        background: map-get($colors, 'hoc');
+      }
+
+      .shipping-text {
+        @include rem(padding-top, 6px);
+        color: white;
+        font-family: "Halvetica Neue";
+        font-size: 12pt;
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+
+
+  /** Mini-cart design */
+  .minicart-wrapper {
+    .action {
+      &.showcart {
+        .counter {
+          &.qty {
+            background:  map-get($colors, 'teal');
+          }
         }
       }
     }
   }
-}
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    &:active {
+      text-decoration: none;
+    }
+  }
+

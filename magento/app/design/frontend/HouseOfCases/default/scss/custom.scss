@@ -11,3 +11,11 @@
 html {
   @include rem-baseline;
 }
+
+html, body {
+  @include rem(margin, 0px);
+  @include rem(padding, 0px);
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}

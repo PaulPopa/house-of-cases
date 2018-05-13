@@ -18,7 +18,8 @@
 
         <move element="top.search" destination="top.links" before="-"/>
 
-        <referenceContainer name="header.panel">
+        <!--Social links footer-->
+        <referenceContainer name="footer-container">
             <block class="Magento\Framework\View\Element\Template" name="social-links" before="store_language"
                    template="Magento_Theme::html/social-links.phtml"/>
         </referenceContainer>
@@ -77,57 +78,21 @@
             <referenceBlock name="form.subscribe" remove="true"/>
             <referenceBlock name="email" remove="true"/>
 
-            <referenceContainer name="footer-container">
-                <container name="footerr" as="footerr" label="Page Footer" htmlTag="div"
-                           htmlClass="footer content right">
-                    <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_2">
-                        <arguments>
-                            <argument name="css_class" xsi:type="string">footer linkss</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="custom-page">
-                        <arguments>
-                            <argument name="label" xsi:type="string">Politica de Retur</argument>
-                            <argument name="path" xsi:type="string">url-key-of-your-page</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
-                           name="garantia-produselor">
-                        <arguments>
-                            <argument name="label" xsi:type="string" translate="true">Garantia Produselor</argument>
-                            <argument name="path" xsi:type="string">contact</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
-                           name="odr">
-                        <arguments>
-                            <argument name="label" xsi:type="string" translate="true">Online Dispute Resolution
-                            </argument>
-                            <argument name="path" xsi:type="string">contact</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
-                           name="anpc">
-                        <arguments>
-                            <argument name="label" xsi:type="string" translate="true">ANPC</argument>
-                            <argument name="path" xsi:type="string">contact</argument>
-                        </arguments>
-                    </block>
-                </container>
-            </referenceContainer>
+            <referenceBlock name="footer_links" remove="true"/>
+
         </referenceBlock>
 
         <!-- Remove product tabs: Details and more information -->
         <referenceBlock name="product.attributes" remove="true"/>
 
         <!-- Add logo to footer (footer_block block) -->
-        <referenceBlock name="footer_links_2">
-            <block class="Magento\Cms\Block\Block" name="footer_block">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">footer_block</argument>
-                </arguments>
-            </block>
-        </referenceBlock>
+        <!--<referenceBlock name="footer_links_2">-->
+            <!--<block class="Magento\Cms\Block\Block" name="footer_block">-->
+                <!--<arguments>-->
+                    <!--<argument name="block_id" xsi:type="string">footer_block</argument>-->
+                <!--</arguments>-->
+            <!--</block>-->
+        <!--</referenceBlock>-->
 
         <referenceContainer name="page.wrapper">
             <block class="Magento\Framework\View\Element\Template" name="shipping-header" before="-"
