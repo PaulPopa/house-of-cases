@@ -7,91 +7,179 @@ a {
   }
 }
 
-@include breakpoint(426px) {
-  .footer {
-    &.content {
-      @include rem(margin-top, -35px);
-      border-top: hidden;
-
-      .links {
-        @include rem(margin-bottom, -27px !important);
-        @include rem(margin-top, 45px);
-        @include rem(margin-left, 35px);
-
-        img {
-          @include rem(height, 40px);
-          @include rem(margin-top, -10px);
-          @include rem(width, 185px);
-        }
-
-        > li {
-          @include rem(margin-left, -45px);
-          @include rem(padding-top, 10px);
-          font-family: Helvetica;
-          font-weight: 600;
-          margin-bottom: auto;
-        }
-      }
-
-      &.right {
-        @include rem(margin-right, -5px);
-        @include rem(margin-top, -190px);
-        float: right;
-        font-family: Helvetica;
-        font-weight: 600;
-        list-style: none;
-        margin-bottom: auto;
-        text-align: right;
-        width: auto;
-
-        > li {
-          @include rem(padding-top, 10px);
-        }
-      }
-    }
-  }
-
-  .page-footer {
-    @include rem(margin-top, 100%);
-    background-color: map-get($colors, 'grey');
-  }
-}
-
-/** MOBILE */
+/** Mobile Footer */
 @include breakpoint(0px, 425px) {
-  .footer {
-    &.content {
-      @include rem(margin-top, -10px);
+  .page-footer {
+    background-color: map_get($colors, 'lgrey');
+    box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
+    @include rem(margin-top, 7px);
+    display: grid;
+    grid-grap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 1fr 0.50fr;
+    grid-template-areas: "logo" "link1" "link2" "social";
+  }
+
+  .footer-logo {
+    grid-area: logo;
+
+    img {
+      @include rem(height, 40px);
+      @include rem(padding-top, 5px);
+      @include rem(width, 185px);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .footer-left {
+    grid-area: link1;
+
+    > li {
+      @include rem(padding-top, 10px);
+      font-family: "Helvetica Neue";
+      list-style: none;
       text-align: center;
+    }
+  }
 
-      .links {
-        > li {
-          @include rem(padding-top, 10px);
-          font-family: Helvetica;
-          font-weight: 600;
-        }
+  .footer-right {
+    grid-area: link2;
 
-        .block-static-block {
-          &.widget {
-            display: none;
-          }
-        }
+    > li {
+      @include rem(padding-top, 10px);
+      font-family: "Helvetica Neue";
+      list-style: none;
+      text-align: center;
+    }
+  }
+
+  .social-links {
+    @include rem(bottom, 10px);
+    @include rem(margin-top, 6px);
+    display: flex;
+    flex-flow: row wrap;
+    float: right;
+    grid-area: social;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-button: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+
+    a {
+      &:hover {
+        text-decoration: none;
       }
+    }
 
-      &.right {
-        font-family: Helvetica;
-        font-weight: 600;
-        list-style: none;
-        text-align: center;
+    .fa {
+      @include rem(border-width, 1.2px);
+      @include rem(height, 25px);
+      @include rem(line-height, 25px);
+      @include rem(width, 25px);
+      border-color: map-get($colors, 'dark-grey');
+      border-radius: 50%;
+      border-style: solid;
+      color: map-get($colors, 'dark-grey');
+      text-align: center;
+      vertical-align: middle;
 
-        > li {
-          @include rem(padding-bottom, 10px);
-        }
+      &:hover {
+        background-color: map-get($colors, 'black');
+        color: map-get($colors, 'grey');
       }
     }
   }
+}
+/** Desktop & Tablet Footer **/
+@include breakpoint(425px) {
+  .social-links {
+    @include rem(bottom, 10px);
+    display: flex;
+    flex-flow: row wrap;
+    float: right;
+    grid-area: social;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    width: 150px;
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .fa {
+      @include rem(border-width, 1.2px);
+      @include rem(height, 25px);
+      @include rem(line-height, 25px);
+      @include rem(width, 25px);
+      border-color: map-get($colors, 'dark-grey');
+      border-radius: 50%;
+      border-style: solid;
+      color: map-get($colors, 'dark-grey');
+      text-align: center;
+      vertical-align: middle;
+
+      &:hover {
+        background-color: map-get($colors, 'black');
+        color: map-get($colors, 'grey');
+      }
+    }
+  }
+
+  .footer-left {
+    @include rem(margin-top, 25px);
+    grid-area: link1;
+
+    > li {
+      @include rem(padding-top, 5px);
+      font-family: "Helvetica Neue";
+      list-style: none;
+    }
+  }
+
   .page-footer {
-    background-color: map-get($colors, 'grey');
+    background-color: map_get($colors, 'lgrey');
+    box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
+    @include rem(margin-top, 7px);
+    display: grid;
+    grid-grap: 1 rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "link1 logo link2"  "link1 social link2";
+
+    .footer-right {
+      @include rem(margin-top, 25px);
+      grid-area: link2;
+
+      > li {
+        @include rem(padding-top, 5px);
+        @include rem(margin-right, 10px);
+        font-family: "Helvetica Neue";
+        list-style: none;
+        text-align: right;
+      }
+    }
+  }
+
+  .footer-logo {
+    grid-area: logo;
+
+    img {
+      @include rem(height, 40px);
+      @include rem(margin-top, 10px);
+      @include rem(padding-top, 5px);
+      @include rem(width, 185px);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+     }
   }
 }
-
