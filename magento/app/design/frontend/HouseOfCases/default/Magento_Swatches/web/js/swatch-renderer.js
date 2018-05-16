@@ -483,7 +483,7 @@ define([
                 return '';
             }
 
-            $.each(config.options, function () {
+            $.each(config.options, function (key, value) {
                 var id,
                     type,
                     value,
@@ -520,6 +520,14 @@ define([
 
                 if (!this.hasOwnProperty('products') || this.products.length <= 0) {
                     attr += ' option-empty="true"';
+                }
+
+                if (key == 0) {
+                    html += '<div class="sub-category">Clear</div>';
+                } else if (key == 4) {
+                    html += '<br><br><div class="sub-category">Glossy</div>';
+                } else if (key == 8) {
+                    html += '<br><br><div class="sub-category">Matte</div>';
                 }
 
                 if (type === 0) {
