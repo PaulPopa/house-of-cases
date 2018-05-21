@@ -1,250 +1,147 @@
-/**
-
-.header.content {
-  top: -70px;
-}
-
-@media only screen and (min-width: 768px) {
-  .logo img {
-    margin-left: 549px;
+.page-header {
+  .panel {
+    &.wrapper {
+      display: none;
+    }
   }
 }
 
-.block-search input {
-  display: none;
+@include breakpoint(0px, 701px) {
+  .page-wrapper {
+    .page-header {
+      @include rem(height, 74px);
+      background-color: map-get($colors, 'grey');
+      box-shadow: 0px 9px 20px 2px rgba(0, 0, 0, 0.10);
+      display: grid;
+      grid-grap: 1rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "toggle-nav logo minicart";
+
+      .magestore-bannerslider {
+        display:none;
+      }
+
+      .nav-toggle {
+        grid-area: toggle-nav;
+        margin: auto;
+        position: inherit;
+      }
+
+      .logo {
+        grid-area: logo;
+        margin: auto;
+        max-width: 100% !important;
+        top: -9%;
+
+        img {
+          @include rem(height, 31px);
+          @include rem(width, 180px);
+        }
+      }
+
+      .minicart-wrapper {
+        grid-area: minicart;
+        margin: auto;
+      }
+
+      .navigation-bar {
+        display: none;
+      }
+
+      .block-search {
+        display: none;
+      }
+    }
+  }
 }
 
-.block-search .nested {
-  display: none !important;
-}
-.page-header .header-content {
-    top: -70px;
-}
-
-.page-header .header-content .logo {
-    margin-left: 500px;
-}
-
-.page-header .header-content .logo .img {
-    height: 100px;
-    width: 100px;
-}
-*/
-
-/** Desktop & Tablet Page Header */
-@include breakpoint(426px) {
+@include breakpoint(701px) {
   .page-wrapper {
     .page-header {
       @include rem(height, 104px);
       background-color: map-get($colors, 'grey');
-      box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.10);
+      box-shadow: 0px 9px 20px 2px rgba(0, 0, 0, 0.10);
+      display: grid;
+      grid-grap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "logo search" "nav minicart";
 
-      .panel {
-        &.wrapper {
-          @include rem(border-bottom, 1px solid rgba(0, 0, 0, 3.0));
-          @include rem(height, 52px);
-          @include rem(margin, 0 auto);
-          width: 95%;
+      .magestore-bannerslider {
+        display:none;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .minicart-wrapper {
+        @include rem(bottom, 8px);
+        display: block;
+        grid-area: minicart;
+        margin: auto;
+        margin-right: 0;
+        transform: translate(-20%, 0);
+        z-index: 101;
+      }
+
+      .logo {
+        //In functie de banner
+        @include rem(left, 25px);
+        grid-area: logo;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .navigation-bar {
+        //In functie de banner
+        @include rem(margin-left, -20px);
+        grid-area: nav;
+        margin-bottom: auto;
+        margin-top: auto;
+
+        li {
+          color: map-get($colors, 'dark-grey');
+          display: inline-block;
+          font-family: "Helvetica Neue";
+          text-transform: uppercase;
+
+          a {
+            @include rem(padding, 8px);
+            color: map-get($colors, 'black');
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+              color: map-get($colors, 'dimgrey');
+              cursor: pointer;
+            }
+          }
         }
       }
 
-      .header {
-        &.content {
-          padding: 0;
-        }
-      }
-    }
-  }
-}
+      .block-search {
+        display: none;
+        grid-area: search;
 
-@include breakpoint(1020px, 1300px) {
-  .page-wrapper {
-    .page-header {
-      .panel {
-        &.wrapper {
-          max-width: 95%;
-        }
-      }
-    }
-  }
-}
-
-@include breakpoint(426px, 767px) {
-  .page-wrapper {
-    .page-header {
-      .panel {
-        &.wrapper {
-          width: 94%;
-        }
-      }
-    }
-  }
-
-  .navigation-bar {
-    @include rem(margin-left, 15px);
-  }
-}
-
-/** Mobile Page Header **/
-@include breakpoint(0px, 425px) {
-  .page-wrapper {
-    .page-header {
-      @include rem(height, 75px);
-      background-color: map-get($colors, 'grey');
-      border-bottom: none;
-      box-shadow: 0px 9px 20px 2px rgba(0,0,0,0.10);
-
-      .panel {
-        &.wrapper {
-          @include rem(height, 52px);
-        }
-      }
-
-      .header {
-        &.content {
-          padding: 0;
-        }
-      }
-    }
-  }
-
-  .nav-toggle {
-    top: -35px;
-  }
-
-  .minicart-wrapper {
-    top: -51px;
-  }
-
-  .minicart-wrapper {
-    .action.showcart {
-      @include rem(margin-right, 10px);
-      @include rem(margin-top, 8px);
-      @include rem(right, -10px);
-      display: block;
-      position: absolute;
-    }
-  }
-
-  /** Categories title and description from homepage */
-  .content-heading {
-    .title {
-      font-size: 18px !important;
-    }
-
-    .info {
-      font-size: 12px !important;
-    }
-  }
-}
-
-/** Cart **/
-.minicart-wrapper {
-  position: absolute;
-  right: 0;
-
-  .action {
-    &.showcart {
-      @include rem(margin-right, 23px);
-      @include rem(margin-top, 10px);
-    }
-  }
-}
-
-
-/** Desktop Logo **/
-@include breakpoint(768px) {
-  .logo {
-    @include rem(left, 30px);
-    @include rem(margin-left, 25px);
-    @include rem(top, -32px);
-    float: left;
-    margin: 0 auto;
-    padding: 0;
-    position: absolute;
-    width: 100%;
-
-    img {
-      @include rem(width, 180px);
-    }
-  }
-}
-
-/** Tablet Logo && Nav toggle */
-@include breakpoint(426px, 767px) {
-  .logo {
-    @include rem(margin-left, 25px);
-    @include rem(top, -45px);
-    float: left;
-    padding: 0;
-    position: absolute;
-    width: 100%;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-}
-
-/** Mobile Logo **/
-@include breakpoint(0px, 425px) {
-  .logo {
-    @include rem(top, -35px);
-    left: 39%;
-    transform: translate(-50%, 0);
-
-    img {
-      @include rem(width, 180px)
-    }
-  }
-}
-
-/** Desktop & Tablet Navigation Bar **/
-@include breakpoint(426px) {
-  .navigation-bar {
-    @include rem(line-height, 52px);
-    @include rem(margin-left, 20px);
-    float: left;
-    padding: 0;
-    position: absolute;
-    width: 100%;
-
-    li {
-      display: inline-block;
-      text-transform: uppercase;
-
-      a {
-        @include rem(padding, 8px);
-        color: map-get($colors, 'black');
-        font-weight: 600;
-        text-decoration: none;
-
-        &:hover {
-          color: map-get($colors, 'dimgrey');
-          cursor: pointer;
+        .control {
+          display: none;
         }
       }
     }
   }
 }
 
-/** MOBILE Navigation Bar*/
-@include breakpoint(0px, 425px) {
-  .navigation-bar {
-    display: none;
+/** Categories title and description from homepage */
+.content-heading {
+  .title {
+    font-size: 18px !important;
   }
-}
 
-/** MOBILE */
-@include breakpoint(0px, 425px) {
-  .navigation-bar {
-    display: none;
-  }
-}
-
-.block-search {
-  .action.search {
-    @include rem(right, -14px !important);
+  .info {
+    font-size: 12px !important;
   }
 }
 
@@ -271,6 +168,7 @@
     }
   }
 }
+
 @include breakpoint(426px) {
   .page-wrapper {
     .shipping-header {
@@ -292,50 +190,51 @@
   }
 }
 
-  /** MOBILE */
-  @include breakpoint(0px, 425px) {
-    .page-wrapper {
-      .shipping-header {
-        @include rem(height, 35px);
-        background: map-get($colors, 'hoc');
-      }
+/** MOBILE */
+@include breakpoint(0px, 425px) {
+  .page-wrapper {
+    .shipping-header {
+      @include rem(height, 35px);
+      background: map-get($colors, 'hoc');
+    }
 
-      .shipping-text {
-        @include rem(padding-top, 6px);
-        color: white;
-        font-family: "Halvetica Neue";
-        font-size: 12pt;
-        margin: auto;
-        text-align: center;
-      }
+    .shipping-text {
+      @include rem(padding-top, 6px);
+      color: white;
+      font-family: "Halvetica Neue";
+      font-size: 12pt;
+      margin: auto;
+      text-align: center;
     }
   }
+}
 
-
-  /** Mini-cart design */
-  .minicart-wrapper {
-    .action {
-      &.showcart {
-        .counter {
-          &.qty {
-            background:  map-get($colors, 'teal');
-          }
+/** Mini-cart design */
+.minicart-wrapper {
+  .action {
+    &.showcart {
+      .counter {
+        &.qty {
+          background: map-get($colors, 'teal');
         }
       }
     }
   }
+}
 
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:visited {
-      text-decoration: none;
-    }
-
-    &:active {
-      text-decoration: none;
-    }
+a {
+  &:hover {
+    text-decoration: none;
   }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+
 

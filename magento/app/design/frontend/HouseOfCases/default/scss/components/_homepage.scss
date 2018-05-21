@@ -1,0 +1,59 @@
+@include breakpoint(426px) {
+  .homepage-presentation {
+    display: grid;
+    grid-grap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "description1 image1" "image2 desription2" "description3 image3";
+
+    .description1 {
+        margin: auto;
+    }
+
+    .description2 {
+        margin: auto;
+    }
+
+    .description3 {
+       margin: auto;
+    }
+  }
+}
+
+@include breakpoint(0px, 426px) {
+  .homepage-presentation {
+    display: grid;
+    grid-grap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.25fr 1fr 0.25fr 1fr 0.25fr 1fr;
+    grid-template-areas: "description1" "image1" "description2" "image2" "description3" "image3";
+
+    .description1 {
+      grid-area: description1;
+    }
+
+    .image1 {
+      grid-area: image1;
+    }
+
+    .description2 {
+      grid-area: description2;
+    }
+
+    .image2 {
+      grid-area: image2;
+    }
+
+    .description3 {
+      grid-area: description3;
+    }
+
+    .image3 {
+      grid-area: image3;
+    }
+  }
+}
+
+.magestore-bannerslider {
+  @include rem(margin-top, 20px);
+}

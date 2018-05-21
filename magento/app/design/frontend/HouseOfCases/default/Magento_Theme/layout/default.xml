@@ -10,13 +10,13 @@
             <referenceBlock name="register-link" remove="true"/>           <!--for Create Account Link-->
             <referenceBlock name="wish-list-link" remove="true"/>          <!--for WishList Link-->
         </referenceBlock>
+        <referenceBlock name="breadcrumbs" remove="true"/>
 
-        <referenceContainer name="main">
-            <block class="Magento\Framework\View\Element\Template" name="homepage-categories" before="-"
-                   template="Magento_Theme::html/homepage-categories.phtml"/>
-        </referenceContainer>
 
-        <move element="top.search" destination="top.links" before="-"/>
+        <!--<referenceContainer name="main">-->
+            <!--<block class="Magento\Framework\View\Element\Template" name="homepage-categories" after="-"-->
+                   <!--template="Magento_Theme::html/product-description.phtml"/>-->
+        <!--</referenceContainer>-->
 
         <!--Social links footer-->
         <referenceContainer name="footer-container">
@@ -26,60 +26,17 @@
 
         <referenceBlock name="navigation.sections" remove="true"/>         <!--for Navigation Bar-->
 
-        <referenceContainer name="header-wrapper">
-            <block class="Magento\Framework\View\Element\Template" name="navigation-bar" before="mini-cart"
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="navigation-bar" before="-"
                    template="Magento_Theme::html/navigation-bar.phtml"/>
         </referenceContainer>
 
         <referenceBlock name="footer_links">
-            <!-- Replace Privacy Policy Link with Contact link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="privacy-policy-link">
-                <arguments>
-                    <argument name="label" translate="true" xsi:type="string">Contact</argument>
-                    <argument name="path" xsi:type="string">privacy-policy-cookie-restriction-mode</argument>
-                </arguments>
-            </block>
-            <!-- Replace Search terms with Despre noi link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="catalog/seo/search_terms"
-                   name="search-term-popular-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Despre noi</argument>
-                    <argument name="path" xsi:type="string">search/term/popular</argument>
-                </arguments>
-            </block>
-            <!-- Replace Orders and Returns with Termeni si conditii link -->
-            <block class="Magento\Sales\Block\Guest\Link" name="sales-guest-form-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Termeni si conditii</argument>
-                    <argument name="path" xsi:type="string">sales/guest/form</argument>
-                </arguments>
-            </block>
-            <!-- Replace Advanced Search with Confidentialitate link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="catalog-search-advanced-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Confidentialitate</argument>
-                    <argument name="path" xsi:type="string">catalogsearch/advanced</argument>
-                    <argument name="attributes" xsi:type="array">
-                        <item name="data-action" xsi:type="string">advanced-search</item>
-                    </argument>
-                </arguments>
-            </block>
-            <!-- Replace Contact us with Metode de plata link -->
-            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
-                   name="contact-us-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Metode de plata</argument>
-                    <argument name="path" xsi:type="string">contact</argument>
-                </arguments>
-            </block>
-
             <referenceBlock name="copyright" remove="true"/>
             <referenceBlock name="report.bugs" remove="true"/>
             <referenceBlock name="form.subscribe" remove="true"/>
             <referenceBlock name="email" remove="true"/>
-
             <referenceBlock name="footer_links" remove="true"/>
-
         </referenceBlock>
 
         <!-- Remove product tabs: Details and more information -->
@@ -98,5 +55,10 @@
             <block class="Magento\Framework\View\Element\Template" name="shipping-header" before="-"
                    template="Magento_Theme::html/shipping-header.phtml"/>
         </referenceContainer>
+
+        <move element="minicart" destination="header.container" before="-"/>
+        <move element="logo" destination="header.container" before="-"/>
+        <move element="top.search" destination="header.container" before="-" />
+
     </body>
 </page>

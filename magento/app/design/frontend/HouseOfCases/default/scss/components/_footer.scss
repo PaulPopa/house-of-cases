@@ -8,28 +8,36 @@ a {
 }
 
 /** Mobile Footer */
-@include breakpoint(0px, 425px) {
+@include breakpoint(0px, 426px) {
   .page-footer {
     background-color: map_get($colors, 'lgrey');
     box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
-    @include rem(margin-top, 7px);
+    @include rem(margin-bottom, -20px);
+    //@include rem(margin-top, 7px);
     display: grid;
     grid-grap: 1rem;
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 1fr 1fr 0.50fr;
     grid-template-areas: "logo" "link1" "link2" "social";
+    justify-content: center;
   }
 
   .footer-logo {
     grid-area: logo;
 
     img {
+      @include rem(bottom, -10px);
       @include rem(height, 40px);
       @include rem(padding-top, 5px);
       @include rem(width, 185px);
       display: block;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
+    }
+
+    p {
+      display: none;
     }
   }
 
@@ -37,10 +45,12 @@ a {
     grid-area: link1;
 
     > li {
+      @include rem(bottom, -30px);
       @include rem(padding-top, 10px);
       font-family: "Helvetica Neue";
       list-style: none;
       text-align: center;
+      position: relative;
     }
   }
 
@@ -48,10 +58,12 @@ a {
     grid-area: link2;
 
     > li {
+      @include rem(bottom, -30px);
       @include rem(padding-top, 10px);
       font-family: "Helvetica Neue";
       list-style: none;
       text-align: center;
+      position: relative;
     }
   }
 
@@ -68,6 +80,12 @@ a {
     margin-left: auto;
     margin-right: auto;
     width: 150px;
+
+    > li {
+      @include rem(bottom, -40px);
+      position: relative;
+
+    }
 
     a {
       &:hover {
@@ -95,7 +113,7 @@ a {
   }
 }
 /** Desktop & Tablet Footer **/
-@include breakpoint(425px) {
+@include breakpoint(426px) {
   .social-links {
     @include rem(bottom, 10px);
     display: flex;
@@ -135,20 +153,28 @@ a {
   }
 
   .footer-left {
-    @include rem(margin-top, 25px);
+    @include rem(margin-top, 40px);
     grid-area: link1;
 
     > li {
+      @include rem(margin-left, 15px);
       @include rem(padding-top, 5px);
       font-family: "Helvetica Neue";
+      font-size: 13pt;
       list-style: none;
+
+      a {
+        color: map_get($colors, 'mgrey');
+      }
     }
   }
 
   .page-footer {
     background-color: map_get($colors, 'lgrey');
     box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
-    @include rem(margin-top, 7px);
+    @include rem(margin-bottom, -20px);
+    //@include rem(margin-top, 7px);
+    @include rem(max-height, 165px);
     display: grid;
     grid-grap: 1 rem;
     grid-template-columns: 1fr 1fr 1fr;
@@ -156,15 +182,21 @@ a {
     grid-template-areas: "link1 logo link2"  "link1 social link2";
 
     .footer-right {
-      @include rem(margin-top, 25px);
+      @include rem(margin-top, 40px);
       grid-area: link2;
 
       > li {
+        @include rem(margin-left, 15px);
+        @include rem(margin-right, 15px);
         @include rem(padding-top, 5px);
-        @include rem(margin-right, 10px);
         font-family: "Helvetica Neue";
+        font-size: 13pt;
         list-style: none;
         text-align: right;
+
+        a {
+          color: map_get($colors, 'mgrey');
+        }
       }
     }
   }
@@ -173,7 +205,7 @@ a {
     grid-area: logo;
 
     img {
-      @include rem(height, 40px);
+      @include rem(height, 35px);
       @include rem(margin-top, 10px);
       @include rem(padding-top, 5px);
       @include rem(width, 185px);
@@ -181,5 +213,16 @@ a {
       margin-left: auto;
       margin-right: auto;
      }
+
+    p {
+      @include rem(letter-spacing, 2px);
+      @include rem(margin-top, 5px);
+      color: map_get($colors, 'dark-grey');
+      font-size: 13pt;
+      font-family: Helvetica Neue;
+      text-align: center;
+      text-decoration: overline;
+      text-decoration-color: slategrey;
+    }
   }
 }
