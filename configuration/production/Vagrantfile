@@ -13,9 +13,8 @@ Vagrant.configure("2") do |config|
       end
   end
 
+  config.ssh.forward_agent = true
   config.vm.synced_folder(".", "/production", disabled: true)
-  config.vm.synced_folder("../../magento/", "/var/www/house-of-cases/magento", owner: "www-data", group: "www-data")
-  config.vm.synced_folder("../../scripts/", "/var/www/house-of-cases/scripts", owner: "www-data", group: "www-data")
 
   config.puppet_install.puppet_version = :latest
   config.vm.provision :puppet do |puppet|
@@ -24,11 +23,16 @@ Vagrant.configure("2") do |config|
     puppet.manifest_file = 'init-production.pp'
   end
 
-  config.vm.provision "shell", name: "Magento Setup", keep_color: true, inline: "
-    cd /var/www/house-of-cases/magento
+  config.vm.provision "shell", name: "Release", keep_color: true, inline: "
+    rm -rf /release
+    mkdir -p /var/www/release
+    cd /var/www/release
+    ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+    git clone git@github.com:PaulPopa/house-of-cases.git
+    cd house-of-cases/magento
     composer install
-    php bin/magento setup:install --db-host=localhost --db-name=hoc_dev --db-user=hoc_dev --db-password='n2@79Bn628T7' --admin-firstname=Admin --admin-lastname=User --admin-email=pxp420mail@gmail.com --admin-user=admin --admin-password='house0fcases' --backend-frontname=admin_hoc
-    php bin/magento setup:store-config:set --base-url=http://dev-houseofcases.co.uk/
+    php bin/magento setup:install --db-host=localhost --db-name=casacuhuse --db-user=casacuhuse --db-password='9Ue61hv7$9eh' --admin-firstname=Admin --admin-lastname=User --admin-email=pxp420mail@gmail.com --admin-user=admin --admin-password='house0fcases' --backend-frontname=admin_hoc
+    php bin/magento setup:store-config:set --base-url=http://houseofcases.co.uk/
     php bin/magento module:enable --all
     php bin/magento cache:enable
     php bin/magento cache:disable full_page
@@ -36,18 +40,6 @@ Vagrant.configure("2") do |config|
     php bin/magento cache:clean
     php bin/magento setup:upgrade
     php bin/magento deploy:mode:set developer
-  "
-
-  config.vm.provision "shell", name: "Magerun Install", keep_color: true, inline: "
-    cd /var/www/house-of-cases/magento
-    wget https://files.magerun.net/n98-magerun2.phar
-    chmod +x ./n98-magerun2.phar
-    mv ./n98-magerun2.phar /usr/local/bin/
-    echo 'alias magerun=\"n98-magerun2.phar\"' >> ~/.bashrc
-  "
-
-  config.vm.provision "shell", name: "Run Scripts", keep_color: true, inline: "
-    cd /var/www/house-of-cases/magento
     bash ../scripts/set-permissions.sh
   "
 end
