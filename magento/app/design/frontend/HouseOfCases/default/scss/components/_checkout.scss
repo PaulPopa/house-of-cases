@@ -1,0 +1,17 @@
+.opc-progress-bar-item {
+  &._active {
+    :before {
+      background: map-get($colors, 'teal');
+    }
+  }
+}
+
+.opc-progress-bar-item {
+  &._active {
+    > span {
+      :before {
+        background: map-get($colors, 'teal');
+      }
+    }
+  }
+}
