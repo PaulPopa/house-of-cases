@@ -522,12 +522,21 @@ define([
                     attr += ' option-empty="true"';
                 }
 
-                if (key == 0) {
-                    html += '<div class="sub-category">Clear</div>';
-                } else if (key == 4) {
-                    html += '<br><br><div class="sub-category">Glossy</div>';
-                } else if (key == 8) {
-                    html += '<br><br><div class="sub-category">Matte</div>';
+                if (config.options.length == 10) {
+                    if (key == 0) {
+                        html += '<div class="sub-category">Transparent</div>';
+                    } else if (key == 1) {
+                        html += '<br><br><div class="sub-category">Matte</div>';
+                    } else if (key == 7) {
+                        html += '<br><br><div class="sub-category">Glossy</div>';
+                    }
+                } else if (config.options.length == 8) {
+                    if (key == 0) {
+                        html += '<div class="sub-category">Matte</div>';
+                    }
+                    if (key == 5) {
+                        html += '<br><br><div class="sub-category">Glossy</div>';
+                    }
                 }
 
                 if (type === 0) {
