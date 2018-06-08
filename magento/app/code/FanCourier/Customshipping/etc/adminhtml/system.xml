@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+<system>
+<section id="carriers" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+<group id="fancourier_customshipping" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+<label>FAN Courier</label>
+<field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+<label>A se utiliza modulul FAN Courier</label>
+<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+<label>Titlu</label>
+</field>
+
+<field id="clientid" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+<label>Client ID</label>
+</field>
+<field id="username" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Username</label>
+</field>
+<field id="password" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Parola</label>
+</field>
+<field id="onlyadm" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Confirmare AWB de catre admin</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="parcel" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Expediere colete</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="labels" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Numar pachete / AWB</label>
+</field>
+<field id="paymentdest" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Plata AWB la destinatie</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+
+<field id="fara_tva" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Afisare pret fara TVA</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="doar_km" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Afisare pret doar KM suplimentari</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+	<comment>In cadrul acestei optiuni este necesar sa se seteze Plata AWB la destinatie - Nu si Adaugare taxa transport la ramburs - Da</comment>
+</field>
+
+<field id="payment0" translate="label" type="select" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Ascundere taxa de transport</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="min_gratuit_bucuresti" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Suma minima transport gratuit in Bucuresti</label>
+	<comment>Completati o valoare diferita de 0 pentru ascunderea taxei de transport la comenzi ce depasesc aceasta valoare.</comment>
+<validate>validate-number validate-zero-or-greater</validate>
+</field>
+<field id="min_gratuit_tara" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Suma minima transport gratuit in tara</label>
+	<comment>Completati o valoare diferita de 0 pentru ascunderea taxei de transport la comenzi ce depasesc aceasta valoare.</comment>
+<validate>validate-number validate-zero-or-greater</validate>
+</field>
+<field id="suma_fixa" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Afisare suma fixa</label>
+	<validate>validate-number validate-zero-or-greater</validate>
+</field>
+
+<field id="ramburs" translate="label" type="select" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Solicitare ramburs valoare marfa</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="totalrb" translate="label" type="select" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Adaugare taxa transp. la ramburs</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="contcolector" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Solicitare ramburs in cont bancar</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="paymentrbdest" translate="label" type="select" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Plata ramburs la destinatie</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="asigurare" translate="label" type="select" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Declarare valoare continut</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="content" translate="label" type="select" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Imprimare SKU/Continut</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+<field id="redcode" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Afisare optiune Redcode</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+<field id="express" translate="label" type="select" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Afisare optiune ExpressLoco</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+<field id="paypoint" translate="label" type="select" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Ridicare din punct fix (PayPoint)</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+
+<field id="keba" translate="label" type="select" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Ridicare din punct fix(eBOX)</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+
+<field id="deschidere" translate="label" type="select" sortOrder="29" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Deschidere la livrare</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+<field id="ePOD" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Utilizare optiune ePOD</label>
+	<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+</field>
+
+<field id="comment" translate="label" type="text" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+	<label>Observatii (imprimare pe AWB)</label>
+</field>
+<field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+	<label>Sort Order</label>
+</field>
+</group>
+</section>
+</system>
+</config>
