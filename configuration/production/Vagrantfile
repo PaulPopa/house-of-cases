@@ -41,5 +41,17 @@ Vagrant.configure("2") do |config|
     php bin/magento setup:upgrade
     php bin/magento deploy:mode:set developer
     bash ../scripts/set-permissions.sh
+    cd /var/www/
+    rm -rf media/
+    cp -rf house-of-cases/magento/pub/media/ media
+    rm -rf backup/
+    mv house-of-cases/ backup
+    mv release/house-of-cases/ house-of-cases
+    rm -rf house-of-cases/magento/pub/media/
+    cp -rf media/ house-of-cases/magento/pub/media
+    cd /var/www/house-of-cases/magento/
+    php bin/magento cache:flush
+    php bin/magento cache:clean
+    bash ../scripts/set-permissions.sh www-data www-data
   "
 end
