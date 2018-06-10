@@ -11,7 +11,7 @@
     .page-header {
       @include rem(height, 74px);
       background-color: map-get($colors, 'grey');
-      box-shadow: 0px 9px 20px 2px rgba(0, 0, 0, 0.10);
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
       display: grid;
       grid-grap: 1rem;
       grid-template-columns: 1fr 1fr 1fr;
@@ -61,7 +61,7 @@
     .page-header {
       @include rem(height, 104px);
       background-color: map-get($colors, 'grey');
-      box-shadow: 0px 9px 20px 2px rgba(0, 0, 0, 0.10);
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.3);
       display: grid;
       grid-grap: 1rem;
       grid-template-columns: 1fr 1fr;
@@ -78,6 +78,7 @@
 
       .minicart-wrapper {
         @include rem(bottom, 8px);
+        @include rem(left, -10px);
         display: block;
         grid-area: minicart;
         margin: auto;

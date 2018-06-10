@@ -127,6 +127,17 @@
       .fieldset {
         .actions {
           @include rem(height, 75px);
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint (768px) {
+  .product-options-bottom {
+    .box-tocart {
+      .action {
+        &.tocart {
           width: 230%;
         }
       }

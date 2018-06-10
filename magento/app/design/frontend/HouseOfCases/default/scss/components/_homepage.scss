@@ -57,3 +57,7 @@
 .magestore-bannerslider {
   @include rem(margin-top, 20px);
 }
+
+.magestore-bannerslider-standard {
+  width: auto;
+ }

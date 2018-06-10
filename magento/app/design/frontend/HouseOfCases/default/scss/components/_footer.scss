@@ -8,17 +8,17 @@ a {
 }
 
 /** Mobile Footer */
-@include breakpoint(0px, 426px) {
+@include breakpoint(0px, 701px) {
   .page-footer {
-    background-color: map_get($colors, 'lgrey');
-    box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
+    //background-color: map_get($colors, 'lgrey');
+    box-shadow: 0px -3px 7px 0px rgba(0, 0, 0, 0.3);
+    @include rem(height, 240px);
     @include rem(margin-bottom, -20px);
-    //@include rem(margin-top, 7px);
     display: grid;
     grid-grap: 1rem;
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 1fr 1fr 0.50fr;
-    grid-template-areas: "logo" "link1" "link2" "social";
+    grid-template-areas: "social" "logo" "link1" "link2";
     justify-content: center;
   }
 
@@ -27,17 +27,12 @@ a {
 
     img {
       @include rem(bottom, -10px);
-      @include rem(height, 40px);
-      @include rem(padding-top, 5px);
+      @include rem(padding-top, 18px);
       @include rem(width, 185px);
       display: block;
       margin-left: auto;
       margin-right: auto;
       position: relative;
-    }
-
-    p {
-      display: none;
     }
   }
 
@@ -45,9 +40,10 @@ a {
     grid-area: link1;
 
     > li {
-      @include rem(bottom, -30px);
-      @include rem(padding-top, 10px);
+      @include rem(bottom, -8px);
+      @include rem(padding-top, 5px);
       font-family: "Helvetica Neue";
+      font-size: 11pt;
       list-style: none;
       text-align: center;
       position: relative;
@@ -58,9 +54,10 @@ a {
     grid-area: link2;
 
     > li {
-      @include rem(bottom, -30px);
-      @include rem(padding-top, 10px);
+      @include rem(bottom, -7px);
+      @include rem(padding-top, 5px);
       font-family: "Helvetica Neue";
+      font-size: 11pt;
       list-style: none;
       text-align: center;
       position: relative;
@@ -68,8 +65,8 @@ a {
   }
 
   .social-links {
-    @include rem(bottom, 10px);
-    @include rem(margin-top, 6px);
+    @include rem(margin-top, -20px);
+    @include rem(width, 150px);
     display: flex;
     flex-flow: row wrap;
     float: right;
@@ -79,10 +76,10 @@ a {
     margin-button: auto;
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
 
     > li {
       @include rem(bottom, -40px);
+      @include rem(margin-top, -5px);
       position: relative;
 
     }
@@ -113,9 +110,10 @@ a {
   }
 }
 /** Desktop & Tablet Footer **/
-@include breakpoint(426px) {
+@include breakpoint(701px) {
   .social-links {
-    @include rem(bottom, 10px);
+    @include rem(margin-top, 15px);
+    //@include rem(width, 100px);//breaks social links and logo
     display: flex;
     flex-flow: row wrap;
     float: right;
@@ -124,8 +122,11 @@ a {
     list-style: none;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
-    width: 150px;
+
+    > li {
+      @include rem(margin-right, 15px);
+      @include rem(margin-top, 10px);
+    }
 
     a {
       &:hover {
@@ -153,15 +154,17 @@ a {
   }
 
   .footer-left {
-    @include rem(margin-top, 40px);
+    @include rem(margin-top, 45px);
     grid-area: link1;
 
     > li {
       @include rem(margin-left, 15px);
-      @include rem(padding-top, 5px);
+      @include rem(padding-top, 0px);
       font-family: "Helvetica Neue";
       font-size: 13pt;
       list-style: none;
+      overflow: hidden;
+      white-space: nowrap;
 
       a {
         color: map_get($colors, 'mgrey');
@@ -171,24 +174,24 @@ a {
 
   .page-footer {
     background-color: map_get($colors, 'lgrey');
-    box-shadow: inset 0px 9px 20px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -3px 7px 0px rgba(0, 0, 0, 0.3);
     @include rem(margin-bottom, -20px);
     //@include rem(margin-top, 7px);
-    @include rem(max-height, 165px);
+    @include rem(height, 140px);
     display: grid;
     grid-grap: 1 rem;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "link1 logo link2"  "link1 social link2";
+    grid-template-areas: "link1 social link2"  "link1 logo link2";
 
     .footer-right {
-      @include rem(margin-top, 40px);
+      @include rem(margin-top, 45px);
       grid-area: link2;
 
       > li {
         @include rem(margin-left, 15px);
         @include rem(margin-right, 15px);
-        @include rem(padding-top, 5px);
+        @include rem(padding-top, 0px);
         font-family: "Helvetica Neue";
         font-size: 13pt;
         list-style: none;
@@ -205,24 +208,12 @@ a {
     grid-area: logo;
 
     img {
-      @include rem(height, 35px);
-      @include rem(margin-top, 10px);
+      @include rem(margin-top, -10px);
       @include rem(padding-top, 5px);
       @include rem(width, 185px);
       display: block;
       margin-left: auto;
       margin-right: auto;
      }
-
-    p {
-      @include rem(letter-spacing, 2px);
-      @include rem(margin-top, 5px);
-      color: map_get($colors, 'dark-grey');
-      font-size: 13pt;
-      font-family: Helvetica Neue;
-      text-align: center;
-      text-decoration: overline;
-      text-decoration-color: slategrey;
-    }
   }
 }
