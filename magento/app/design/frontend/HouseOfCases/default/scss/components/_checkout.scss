@@ -1,7 +1,7 @@
 .opc-progress-bar-item {
   &._active {
-    :before {
-      background: map-get($colors, 'teal');
+    &:before {
+      background: map-get($colors, 'teal') !important;
     }
   }
 }
@@ -9,8 +9,8 @@
 .opc-progress-bar-item {
   &._active {
     > span {
-      :before {
-        background: map-get($colors, 'teal');
+      &:before {
+        background: map-get($colors, 'teal') !important;
       }
     }
   }
