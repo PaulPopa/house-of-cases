@@ -39,9 +39,12 @@ Vagrant.configure("2") do |config|
     php bin/magento cache:flush
     php bin/magento cache:clean
     php bin/magento setup:upgrade
+    cp /var/www/release/house-of-cases/magento/app/code/Collection.php /var/www/release/house-of-cases/magento/vendor/magestore/module-bannerslider/Model/ResourceModel/Banner/Collection.php
     php bin/magento deploy:mode:set production --skip-compilation
     php bin/magento setup:di:compile
     php bin/magento setup:static-content:deploy en_US ro_RO
+    php bin/magento cache:flush
+    php bin/magento i18n:pack app/i18n/eadesigndev/ro_ro/ro_RO.csv -d ro_RO
     bash ../scripts/set-permissions.sh
     cd /var/www/
     rm -rf media/
