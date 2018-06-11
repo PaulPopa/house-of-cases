@@ -35,8 +35,8 @@
         top: -9%;
 
         img {
-          @include rem(height, 31px);
-          @include rem(width, 180px);
+          @include rem(width, 240px);
+          height: auto;
         }
       }
 
