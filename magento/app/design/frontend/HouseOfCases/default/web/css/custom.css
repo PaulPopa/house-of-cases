@@ -24,10 +24,9 @@
         max-width: 100% !important;
         top: -9%; }
     .page-wrapper .page-header .logo img {
-        height: 31px;
-        height: 3.1rem;
-        width: 180px;
-        width: 18rem; }
+        width: 240px;
+        width: 24rem;
+        height: auto; }
     .page-wrapper .page-header .minicart-wrapper {
         grid-area: minicart;
         margin: auto; }
@@ -561,7 +560,7 @@ select:not([disabled]):focus {
     margin-left: 2rem; }
 
 :not(.fa) {
-    font-family: 'Lato', Arial, Helvetica, sans-serif !important; }
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important; }
 
 html {
     font-size: 62.5%; }
