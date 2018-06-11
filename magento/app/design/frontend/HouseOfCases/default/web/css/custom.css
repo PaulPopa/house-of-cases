@@ -556,6 +556,13 @@ select:not([disabled]):focus {
 .opc-progress-bar-item._active > span:before {
     background: #1bc389 !important; }
 
+.item-qty.cart-item-qty {
+    margin-left: 20px;
+    margin-left: 2rem; }
+
+:not(.fa) {
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important; }
+
 html {
     font-size: 62.5%; }
 
