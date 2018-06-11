@@ -98,10 +98,48 @@
 
       .navigation-bar {
         //In functie de banner
-        @include rem(margin-left, -20px);
+        @include rem(margin-left, -36px);
         grid-area: nav;
         margin-bottom: auto;
         margin-top: auto;
+
+        .dropdown {
+          display: inline-block;
+          position: relative;
+
+          &:hover {
+            .dropdown-content {
+              display: block;
+              float: none;
+            }
+          }
+
+          .dropbtn {
+            @include rem(padding, 16px);
+            background-color: transparent;
+            border: none;
+            color: white;
+          }
+
+          .dropdown-content {
+            @include rem(box-shadow, 0px 8px 16px 0px rgba(0, 0, 0, 0.2));
+            @include rem(margin-left, 23px);
+            @include rem(width, 100px);
+            background-color: map-get($colors, 'grey');
+            display: none;
+            position: absolute;
+            z-index: 1;
+
+            .a {
+              @include rem(font-size, 18px);
+              @include rem(padding, 12px 16px);
+              color: black;
+              display: none;
+              text-decoration: none;
+            }
+          }
+        }
+
 
         li {
           color: map-get($colors, 'dark-grey');
@@ -236,6 +274,3 @@ a {
     text-decoration: none;
   }
 }
-
-
-

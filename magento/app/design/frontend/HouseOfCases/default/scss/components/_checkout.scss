@@ -21,3 +21,10 @@
     @include rem(margin-left, 20px);
   }
 }
+
+.iwd_opc_button {
+  background-color: map-get($colors, 'hoc');
+  border-color: map-get($colors, 'white');
+  color: map-get($colors, 'white');
+  font-weight: bold;
+}
