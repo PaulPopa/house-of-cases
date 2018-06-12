@@ -22,9 +22,17 @@
   }
 }
 
-.iwd_opc_button {
-  background-color: map-get($colors, 'hoc');
-  border-color: map-get($colors, 'white');
-  color: map-get($colors, 'white');
-  font-weight: bold;
+.iwd_main_wrapper {
+  .iwd_opc_alternative_wrapper {
+    .iwd_opc_column {
+      .iwd_opc_button {
+        &:active {
+          background-color: map-get($colors, 'hoc');
+          border-color: map-get($colors, 'white');
+          color: map-get($colors, 'white');
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
