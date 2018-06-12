@@ -590,7 +590,7 @@ select:not([disabled]):focus {
     margin-left: 20px;
     margin-left: 2rem; }
 
-.iwd_opc_button {
+.iwd_main_wrapper .iwd_opc_alternative_wrapper .iwd_opc_column .iwd_opc_button:active {
     background-color: #18C29C;
     border-color: #fff;
     color: #fff;
