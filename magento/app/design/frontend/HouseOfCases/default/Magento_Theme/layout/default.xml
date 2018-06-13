@@ -12,6 +12,10 @@
         </referenceBlock>
         <referenceBlock name="breadcrumbs" remove="true"/>
 
+        <referenceBlock name="reviews.tab" remove="true" />
+        <referenceBlock name="product.review.form" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
+
 
         <!--<referenceContainer name="main">-->
             <!--<block class="Magento\Framework\View\Element\Template" name="homepage-categories" after="-"-->
