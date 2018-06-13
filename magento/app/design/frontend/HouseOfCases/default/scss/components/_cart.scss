@@ -1,0 +1,27 @@
+.cart {
+  &.table-wrapper {
+    .item-actions {
+      .actions-toolbar {
+        a:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.cart-container {
+  .form-cart {
+    .action{
+      &.clear {
+        display: none;
+      }
+    }
+  }
+}
+
+.block {
+ &.shipping {
+   display: none;
+ }
+}
