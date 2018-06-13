@@ -599,6 +599,15 @@ select:not([disabled]):focus {
     color: #fff;
     font-weight: bold; }
 
+.cart.table-wrapper .item-actions .actions-toolbar a:first-child {
+    display: none; }
+
+.cart-container .form-cart .action.clear {
+    display: none; }
+
+.block.shipping {
+    display: none; }
+
 :not(.fa) {
     font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif !important; }
 
