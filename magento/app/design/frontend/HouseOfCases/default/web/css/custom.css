@@ -539,6 +539,9 @@ select:not([disabled]):focus {
     border: 1px solid transparent;
     border: 0.1rem solid transparent; }
 
+.minicart-items .action.edit {
+    display: none; }
+
 @media (min-width: 426px) {
     .homepage-presentation {
         display: grid;
